@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\uBA85\uC9C4\uC7AC\\Desktop\\Fixtris\\Program\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68C99E3C-7E6F-401B-A756-2EB7A5ACB510}|Program.vcxproj|C:\\Users\\\uBA85\uC9C4\uC7AC\\Desktop\\Fixtris\\Program\\Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{68C99E3C-7E6F-401B-A756-2EB7A5ACB510}|Program.vcxproj|solutionrelative:Source.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Source.c",
+              "DocumentMoniker": "C:\\Users\\\uBA85\uC9C4\uC7AC\\Desktop\\Fixtris\\Program\\Source.c",
+              "RelativeDocumentMoniker": "Source.c",
+              "ToolTip": "C:\\Users\\\uBA85\uC9C4\uC7AC\\Desktop\\Fixtris\\Program\\Source.c",
+              "RelativeToolTip": "Source.c",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-09-23T11:39:23.467Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
