@@ -1,0 +1,69 @@
+﻿  tetris.c
+C:\Users\명진재\Desktop\tetris.c(1,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\명진재\Desktop\tetris.c(255,30): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(256,5): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(256,30): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(257,5): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(257,30): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(258,5): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(258,30): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(259,5): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(271,60): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(272,9): error C2143: 구문 오류: ')'이(가) 'if' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(273,63): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(274,9): error C2143: 구문 오류: ')'이(가) 'if' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(379,28): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(380,21): error C2143: 구문 오류: ')'이(가) 'break' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(382,28): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(383,21): error C2143: 구문 오류: ')'이(가) 'break' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(385,28): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(386,21): error C2143: 구문 오류: ')'이(가) 'break' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(418,24): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(419,13): error C2143: 구문 오류: ')'이(가) '}' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(639,20): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(640,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(641,20): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(642,13): error C2146: 구문 오류: ')'이(가) 'Sleep' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(651,24): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(652,17): error C2146: 구문 오류: ')'이(가) 'Sleep' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(703,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(704,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(704,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(705,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(705,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(706,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(706,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(707,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(707,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(708,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(708,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(709,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(708,38): warning C4473: 'printf': 서식 문자열에 대한 인수가 충분하게 전달되지 않았습니다.
+C:\Users\명진재\Desktop\tetris.c(709,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(710,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(710,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(711,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(711,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(712,13): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(712,38): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(713,13): error C2146: 구문 오류: ')'이(가) 'last_score' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(744,1): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+C:\Users\명진재\Desktop\tetris.c(744,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(745,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(745,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(746,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(746,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(747,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(747,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(748,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(748,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(749,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(749,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(750,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(750,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(751,9): error C2146: 구문 오류: ')'이(가) 'gotoxy' 식별자 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(751,34): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(752,5): error C2143: 구문 오류: ')'이(가) '}' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(764,24): error C2001: 상수에 줄 바꿈 문자가 있습니다.
+C:\Users\명진재\Desktop\tetris.c(765,13): error C2143: 구문 오류: ')'이(가) '}' 앞에 없습니다.
+C:\Users\명진재\Desktop\tetris.c(269,27): error C1075: '{': 일치하는 토큰을 찾을 수 없습니다.
