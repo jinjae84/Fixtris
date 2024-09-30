@@ -1,25 +1,7 @@
 ﻿  Source.c
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(323,6): warning C4013: 'CanMove'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(324,25): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(324,25): warning C4024: 'DeleteBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(328,23): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(328,23): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(331,29): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(331,29): warning C4024: 'FixBlockToBoard': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(344,23): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(344,23): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(350,31): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(350,31): warning C4024: 'DeleteBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(354,29): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(354,29): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(361,31): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(361,31): warning C4024: 'DeleteBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(365,29): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(365,29): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(397,27): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(397,27): warning C4024: 'DeleteBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(399,25): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(399,25): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(449,25): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4][4][4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(449,25): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
+C:\Users\명진재\Desktop\Fixtris\Program\Source.c(107,48): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
+C:\Users\명진재\Desktop\Fixtris\Program\Source.c(208,51): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4]'과(와) 다릅니다.
+C:\Users\명진재\Desktop\Fixtris\Program\Source.c(208,51): warning C4024: 'CanMove': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
+C:\Users\명진재\Desktop\Fixtris\Program\Source.c(211,39): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4]'과(와) 다릅니다.
+C:\Users\명진재\Desktop\Fixtris\Program\Source.c(211,39): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
   Program.vcxproj -> C:\Users\명진재\Desktop\Fixtris\Program\x64\Debug\Program.exe
