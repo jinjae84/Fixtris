@@ -1,7 +1,2 @@
 ﻿  Source.c
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(107,48): warning C4305: '=': 'int'에서 'char'(으)로 잘립니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(208,51): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(208,51): warning C4024: 'CanMove': 형식 및 실제 매개 변수 3의 형식이 서로 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(211,39): warning C4047: '함수': 'char (*)[4]'의 간접 참조 수준이 'char [4]'과(와) 다릅니다.
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(211,39): warning C4024: 'ShowBlock': 형식 및 실제 매개 변수 1의 형식이 서로 다릅니다.
   Program.vcxproj -> C:\Users\명진재\Desktop\Fixtris\Program\x64\Debug\Program.exe
