@@ -194,6 +194,17 @@ void check_level_up(void); //레벨목표가 달성되었는지를 판단하고 levelup시킴
 void check_game_over(void); //게임오버인지 판단하고 게임오버를 진행 
 void pause(void);       //게임을 일시정지시킴 
 
+void setColor(int color)
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
+}
+
+void resetColor()
+{
+    setColor(7);
+}
+
 void gotoxy(int x, int y) { //gotoxy함수 
     COORD pos = { 2 * x,y };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
@@ -248,23 +259,31 @@ int main() {
 }
 
 void title(void) {
-    int x = 15;  //타이틀화면이 표시되는 x좌표 
-    int y = 10;  //타이틀화면이 표시되는 y좌표 
+    int x = 14;  //타이틀화면이 표시되는 x좌표 
+    int y = 7;  //타이틀화면이 표시되는 y좌표 
     int cnt;    //타이틀 프레임을 세는 변수  
 
-    gotoxy(x, y + 0); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
-    gotoxy(x, y + 1); printf("◇■■■■■◇■■■■◇■■■■■◇■■■◇◇■◇■■■■◇"); Sleep(100);
-    gotoxy(x, y + 2); printf("◇◇◇■◇◇◇■◇◇◇◇◇◇■◇◇◇■◇◇■◇■◇■◇◇◇◇"); Sleep(100);
-    gotoxy(x, y + 3); printf("◇◇◇■◇◇◇■■■■◇◇◇■◇◇◇■■■◇◇■◇■■■■◇"); Sleep(100);
-    gotoxy(x, y + 4); printf("◇◇◇■◇◇◇■◇◇◇◇◇◇■◇◇◇■◇◇■◇■◇◇◇◇■◇"); Sleep(100);
-    gotoxy(x, y + 5); printf("◇◇◇■◇◇◇■■■■◇◇◇■◇◇◇■◇◇■◇■◇■■■■◇"); Sleep(100);
-    gotoxy(x, y + 6); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
-    //gotoxy(x, y + 7); printf("Please Enter Any Key to Start");
+
+    gotoxy(x, y + 0); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
+    gotoxy(x, y + 1); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
+    gotoxy(x, y + 2); printf("◇◇■■■■■◇■■■■◇■■■■■◇■■■◇◇■◇■■■■◇◇"); Sleep(100);
+    gotoxy(x, y + 3); printf("◇◇◇◇■◇◇◇■◇◇◇◇◇◇■◇◇◇■◇◇■◇■◇■◇◇◇◇◇"); Sleep(100);
+    gotoxy(x, y + 4); printf("◇◇◇◇■◇◇◇■■■■◇◇◇■◇◇◇■■■◇◇■◇■■■■◇◇"); Sleep(100);
+    gotoxy(x, y + 5); printf("◇◇◇◇■◇◇◇■◇◇◇◇◇◇■◇◇◇■◇◇■◇■◇◇◇◇■◇◇"); Sleep(100);
+    gotoxy(x, y + 6); printf("◇◇◇◇■◇◇◇■■■■◇◇◇■◇◇◇■◇◇■◇■◇■■■■◇◇"); Sleep(100);
+    gotoxy(x, y + 7); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
+    gotoxy(x, y + 8); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
+    
+    
     
 
-    for (cnt = 0;; cnt++) { // cnt를 1씩 증가시키면서 계속 반복    //하나도 안중요한 별 반짝이는 애니메이션효과 
+    for (cnt = 0;; cnt++) { // cnt를 1씩 증가시키면서 계속 반복
         if (kbhit()) break; // 키입력이 있으면 무한루프 종료 
-        if (cnt % 200 == 0) { gotoxy(x + 8 , y + 9); printf("Please Enter Any Key to Start"); }       //cnt가 200으로 나누어 떨어질때 별을 표시 
+        if (cnt % 200 == 0)
+        {
+            setColor(6);
+            gotoxy(x + 9 , y + 11); printf("Please Enter Any Key to Start");
+        }       //cnt가 200으로 나누어 떨어질때 별을 표시 
         if ((cnt % 200 - 100) == 0) { gotoxy(x + 8 , y + 9); printf("                                   "); } //위 카운트에서 100카운트 간격으로 별을 지움 
         
         Sleep(10); // 0.01초 멈춤  
@@ -373,13 +392,15 @@ void draw_main(void) {
                 case CEILLING: // 천장모양 
                     printf(". ");
                     break;
-                case WALL: // 벽모양 
+                case WALL: // 벽모양
+                    setColor(3);
                     printf("◆");
                     break;
                 case INACTIVE_BLOCK: //굳은 블럭 모양  
-                    printf("□");
+                    printf("■");
                     break;
                 case ACTIVE_BLOCK: //움직이고 있는 블럭 모양  
+                    setColor(2);
                     printf("■");
                     break;
                 }
@@ -404,18 +425,24 @@ void new_block(void) { // 새로운 블록 생성
 
     new_block_on = 0; //new_block flag를 끔  
 
-    for (i = 0; i < 4; i++) { //게임판 bx, by위치에 블럭생성  
+    for (i = 0; i < 4; i++)
+    { //게임판 bx, by위치에 블럭생성  
         for (j = 0; j < 4; j++) {
             if (blocks[b_type][b_rotation][i][j] == 1) main_org[by + i][bx + j] = ACTIVE_BLOCK;
         }
     }
-    for (i = 1; i < 3; i++) { //게임상태표시에 다음에 나올블럭을 그림 
-        for (j = 0; j < 4; j++) {
-            if (blocks[b_type_next][0][i][j] == 1) {
+    for (i = 1; i < 3; i++)
+    { //게임상태표시에 다음에 나올블럭을 그림 
+        for (j = 0; j < 4; j++)
+        {
+            if (blocks[b_type_next][0][i][j] == 1)
+            {
+                setColor(10);
                 gotoxy(STATUS_X_ADJ + 2 + j, i + 6);
                 printf("■");
             }
-            else {
+            else
+            {
                 gotoxy(STATUS_X_ADJ + 2 + j, i + 6);
                 printf("  ");
             }
@@ -715,7 +742,9 @@ void check_game_over(void) {
 
                 gotoxy(x, y + 6); printf("★  ☆☆☆ BEST SCORE! ☆☆☆   ★  ");
 
-                if (file == 0) { //파일 에러메세지  
+                if (file == 0)
+                { //파일 에러메세지
+                    setColor(4);
                     gotoxy(0, 0);
                     printf("FILE ERROR: SYSTEM CANNOT WRITE BEST SCORE ON \"SCORE.DAT\"");
                 }
