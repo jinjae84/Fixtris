@@ -178,21 +178,21 @@ int crush_on = 0;       //현재 이동중인 블록이 충돌상태인지 알려주는 flag
 int level_up_on = 0;    //다음레벨로 진행(현재 레벨목표가 완료되었음을) 알리는 flag 
 int space_key_on = 0;   //hard drop상태임을 알려주는 flag 
 
-void title(void); //게임시작화면 
-void reset(void); //게임판 초기화 
-void reset_main(void);  //메인 게임판(main_org[][]를 초기화)
-void reset_main_cpy(void); //copy 게임판(main_cpy[][]를 초기화)
-void draw_map(void);    //게임 전체 인터페이스를 표시 
-void draw_main(void);   //게임판을 그림 
-void new_block(void);   //새로운 블록을 하나 만듦 
-void check_key(void);   //키보드로 키를 입력받음 
-void drop_block(void);  //블록을 아래로 떨어트림 
+void title(); //게임시작화면 
+void reset(); //게임판 초기화 
+void reset_main();  //메인 게임판(main_org[][]를 초기화)
+void reset_main_cpy(); //copy 게임판(main_cpy[][]를 초기화)
+void draw_map();    //게임 전체 인터페이스를 표시 
+void draw_main();   //게임판을 그림 
+void new_block();   //새로운 블록을 하나 만듦 
+void check_key();   //키보드로 키를 입력받음 
+void drop_block();  //블록을 아래로 떨어트림 
 int check_crush(int bx, int by, int rotation); //bx, by위치에 rotation회전값을 같는 경우 충돌 판단 
 void move_block(int dir); //dir방향으로 블록을 움직임 
-void check_line(void);  //줄이 가득찼는지를 판단하고 지움 
-void check_level_up(void); //레벨목표가 달성되었는지를 판단하고 levelup시킴 
-void check_game_over(void); //게임오버인지 판단하고 게임오버를 진행 
-void pause(void);       //게임을 일시정지시킴 
+void check_line();  //줄이 가득찼는지를 판단하고 지움 
+void check_level_up(); //레벨목표가 달성되었는지를 판단하고 levelup시킴 
+void check_game_over(); //게임오버인지 판단하고 게임오버를 진행 
+void pause();       //게임을 일시정지시킴 
 
 void setColor(int color)
 {
@@ -258,7 +258,7 @@ int main() {
     }
 }
 
-void title(void) {
+void title() {
     int x = 14;  //타이틀화면이 표시되는 x좌표 
     int y = 7;  //타이틀화면이 표시되는 y좌표 
     int cnt;    //타이틀 프레임을 세는 변수  
@@ -282,9 +282,9 @@ void title(void) {
         if (cnt % 200 == 0)
         {
             setColor(6);
-            gotoxy(x + 9 , y + 11); printf("Please Enter Any Key to Start");
+            gotoxy(x + 10 , y + 11); printf("Press Any Key to Start");
         }       //cnt가 200으로 나누어 떨어질때 별을 표시 
-        if ((cnt % 200 - 100) == 0) { gotoxy(x + 8 , y + 9); printf("                                   "); } //위 카운트에서 100카운트 간격으로 별을 지움 
+        if ((cnt % 200 - 100) == 0) { gotoxy(x + 10 , y + 11); printf("                                   "); } //위 카운트에서 100카운트 간격으로 별을 지움 
         
         Sleep(10); // 0.01초 멈춤  
     }
@@ -292,7 +292,7 @@ void title(void) {
     while (kbhit()) getch(); // 버퍼에 저장된 키 값을 버림
 }
 
-void reset(void) {
+void reset() {
     FILE* file = fopen("score.dat", "rt");  // 점수를 읽을 파일 
     if (file == 0) { best_score = 0; }      // 파일을 열기 못했으면 최고 점수를 0으로 초기화
     else {
@@ -318,7 +318,7 @@ void reset(void) {
 
 }
 
-void reset_main(void) { //게임판을 초기화  
+void reset_main() { //게임판을 초기화  
     int i, j;
 
     for (i = 0; i < MAIN_Y; i++) { // 게임판을 0으로 초기화  
@@ -339,7 +339,7 @@ void reset_main(void) { //게임판을 초기화
     }
 }
 
-void reset_main_cpy(void) { // main_cpy를 초기화 
+void reset_main_cpy() { // main_cpy를 초기화 
     int i, j;
 
     for (i = 0; i < MAIN_Y; i++) {          // 게임판에 게임에 사용되지 않는 숫자를 넣음 
@@ -349,23 +349,28 @@ void reset_main_cpy(void) { // main_cpy를 초기화
     }
 }
 
-void draw_map(void) {       //게임 상태 표시를 나타내는 함수  
+void draw_map() {       //게임 상태 표시를 나타내는 함수  
     int y = 3;              // level, goal, score만 게임중에 값이 바뀔수 도 있음 그 y값을 따로 저장해둠 
     // 그래서 혹시 게임 상태 표시 위치가 바뀌어도 그 함수에서 안바꿔도 되게.. 
     gotoxy(STATUS_X_ADJ, STATUS_Y_LEVEL = y); printf(" LEVEL : %5d", level);
     gotoxy(STATUS_X_ADJ, STATUS_Y_GOAL = y + 1); printf(" GOAL  : %5d", 10 - cnt);
+    setColor(7);
     gotoxy(STATUS_X_ADJ, y + 2); printf("◆   N E X T  ◆ ");
     gotoxy(STATUS_X_ADJ, y + 3); printf("◆            ◆ ");
     gotoxy(STATUS_X_ADJ, y + 4); printf("◆            ◆ ");
     gotoxy(STATUS_X_ADJ, y + 5); printf("◆            ◆ ");
     gotoxy(STATUS_X_ADJ, y + 6); printf("◆            ◆ ");
     gotoxy(STATUS_X_ADJ, y + 7); printf("◆◆◆◆◆◆◆◆ ");
+    setColor(10);
     gotoxy(STATUS_X_ADJ, y + 9); printf(" YOUR SCORE :");
     gotoxy(STATUS_X_ADJ, STATUS_Y_SCORE = y + 10); printf("        %6d", score);
+    setColor(8);
     gotoxy(STATUS_X_ADJ, y + 11); printf(" LAST SCORE :");
     gotoxy(STATUS_X_ADJ, y + 12); printf("        %6d", last_score);
+    setColor(14);
     gotoxy(STATUS_X_ADJ, y + 13); printf(" BEST SCORE :");
     gotoxy(STATUS_X_ADJ, y + 14); printf("        %6d", best_score);
+    setColor(5);
     gotoxy(STATUS_X_ADJ, y + 16); printf("  ↑   : Shift");
     gotoxy(STATUS_X_ADJ, y + 17); printf("←  → : Left / Right");
     gotoxy(STATUS_X_ADJ, y + 18); printf("  ↓   : Soft Drop");
@@ -374,7 +379,7 @@ void draw_map(void) {       //게임 상태 표시를 나타내는 함수
     gotoxy(STATUS_X_ADJ, y + 24); printf("  ESC  : Quit");
 }
 
-void draw_main(void) {
+void draw_main() {
     int i, j;
 
     for (j = 1; j < MAIN_X - 1; j++) { //천장은 계속 새로운블럭이 지나가서 지워지면 새로 그려줌 
@@ -393,10 +398,11 @@ void draw_main(void) {
                     printf(". ");
                     break;
                 case WALL: // 벽모양
-                    setColor(3);
-                    printf("◆");
+                    setColor(1);
+                    printf("□");
                     break;
-                case INACTIVE_BLOCK: //굳은 블럭 모양  
+                case INACTIVE_BLOCK: //굳은 블럭 모양
+                    setColor(15);
                     printf("■");
                     break;
                 case ACTIVE_BLOCK: //움직이고 있는 블럭 모양  
@@ -414,7 +420,7 @@ void draw_main(void) {
     }
 }
 
-void new_block(void) { // 새로운 블록 생성  
+void new_block() { // 새로운 블록 생성  
     int i, j;
 
     bx = (MAIN_X / 2) - 1; //블록 생성 위치x좌표(게임판의 가운데) 
@@ -450,7 +456,7 @@ void new_block(void) { // 새로운 블록 생성
     }
 }
 
-void check_key(void) {
+void check_key() {
     key = 0; //키값 초기화  
 
     if (kbhit()) { // 만약 키입력이 있는 경우에  
@@ -496,7 +502,7 @@ void check_key(void) {
     while (kbhit()) getch(); //키버퍼를 비움 
 }
 
-void drop_block(void) {
+void drop_block() {
     int i, j;
 
     if (crush_on && check_crush(bx, by + 1, b_rotation) == true) crush_on = 0; //밑이 비어있으면 crush flag 끔 
@@ -604,7 +610,7 @@ void move_block(int dir) { //블록을 이동시킴
     }
 }
 
-void check_line(void) {
+void check_line() {
     int i, j, k, l;
 
     int    block_amount; //한줄의 블록갯수를 저장하는 변수 
@@ -644,7 +650,7 @@ void check_line(void) {
     }
 }
 
-void check_level_up(void) {
+void check_level_up() {
     int i, j;
 
     if (cnt >= 10) { //레벨별로 10줄씩 없애야함. 10줄이상 없앤 경우 
@@ -654,15 +660,16 @@ void check_level_up(void) {
         cnt = 0; //지운 줄수 초기화   
 
         for (i = 0; i < 4; i++) {
-            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 4);
+            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 5);
             printf("             ");
-            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 2, MAIN_Y_ADJ + 6);
+            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 7);
             printf("             ");
             Sleep(200);
 
-            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 4);
+            setColor(12);
+            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 5);
             printf("☆LEVEL UP!☆");
-            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 2, MAIN_Y_ADJ + 6);
+            gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 3, MAIN_Y_ADJ + 7);
             printf("☆SPEED UP!☆");
             Sleep(200);
         }
@@ -672,8 +679,8 @@ void check_level_up(void) {
         for (i = MAIN_Y - 2; i > MAIN_Y - 2 - (level - 1); i--) { //레벨업보상으로 각 레벨-1의 수만큼 아랫쪽 줄을 지워줌 
             for (j = 1; j < MAIN_X - 1; j++) {
                 main_org[i][j] = INACTIVE_BLOCK; // 줄을 블록으로 모두 채우고 
-                gotoxy(MAIN_X_ADJ + j, MAIN_Y_ADJ + i); // 별을 찍어줌.. 이뻐보이게 
-                printf("★");
+                gotoxy(MAIN_X_ADJ + j, MAIN_Y_ADJ + i); 
+                printf("  ");
                 Sleep(20);
             }
         }
@@ -717,7 +724,7 @@ void check_level_up(void) {
     }
 }
 
-void check_game_over(void) {
+void check_game_over() {
     int i;
 
     int x = 22;
@@ -725,6 +732,7 @@ void check_game_over(void) {
 
     for (i = 1; i < MAIN_X - 2; i++) {
         if (main_org[3][i] > 0) { //천장(위에서 세번째 줄)에 inactive가 생성되면 게임 오버 
+            setColor(12);
             gotoxy(x, y + 0); printf("★★★★★★★★★★★★★★★★★"); //게임오버 메세지 
             gotoxy(x, y + 1); printf("★                              ★");
             gotoxy(x, y + 2); printf("★    ┌-------------------┐     ★");
@@ -761,13 +769,14 @@ void check_game_over(void) {
     }
 }
 
-void pause(void) { //게임 일시정지 함수 
+void pause() { //게임 일시정지 함수 
     int i, j;
 
-    int x = 5;
-    int y = 5;
+    int x = 22;
+    int y = 11;
 
     for (i = 1; i < MAIN_X - 2; i++) { //게임 일시정지 메세지 
+        setColor(11);
         gotoxy(x, y + 0); printf("★★★★★★★★★★★★★★★★★");
         gotoxy(x, y + 1); printf("★                              ★");
         gotoxy(x, y + 2); printf("★    ┌-------------------┐     ★");
