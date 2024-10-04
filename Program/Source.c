@@ -200,6 +200,11 @@ void check_level_up();
 void check_game_over();  
 void pause();        
 
+void playWAV(const char* filename)
+{
+    PlaySound(TEXT("tetris.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+}
+
 void setColor(int color)
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -242,12 +247,12 @@ void setcursortype(CURSOR_TYPE c)
 int main()
 {
     int i;
-
+    
     srand((unsigned)time(NULL));
     setcursortype(NOCURSOR);  
     title();
     reset();
-
+    
     while (1)
     {
         for (i = 0; i < 5; i++)
@@ -276,6 +281,7 @@ void title()
     int y = 7;  
     int cnt;    
 
+    
 
     gotoxy(x, y + 0); printf("�ޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡ�"); Sleep(100);
     gotoxy(x, y + 1); printf("�ޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡޡ�"); Sleep(100);
@@ -378,6 +384,7 @@ void draw_map()
 {       
     int y = 3;          
     
+    PlaySound(TEXT("tetris.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
     gotoxy(STATUS_X_ADJ, STATUS_Y_LEVEL = y); printf(" LEVEL : %5d", level);
     setColor(14);
@@ -779,16 +786,16 @@ void check_level_up()
         switch (level)
         { 
         case 1:
-            speed = 50;
+            speed = 100;
             break;
         case 2:
-            speed = 25;
+            speed = 50;
             break;
         case 3:
-            speed = 10;
+            speed = 30;
             break;
         case 4:
-            speed = 2;
+            speed = 10;
             break;
         }
         level_up_on = 0; 
