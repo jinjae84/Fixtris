@@ -1,7 +1,5 @@
-﻿  Source.c
-C:\Users\명진재\Desktop\Fixtris\Program\Source.c(7,10): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다.
-  코드를 생성하고 있습니다.
-  Previous IPDB not found, fall back to full compilation.
+﻿  코드를 생성하고 있습니다.
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
   All 28 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   코드를 생성했습니다.
   Program.vcxproj -> C:\Users\명진재\Desktop\Fixtris\Program\x64\Release\Program.exe

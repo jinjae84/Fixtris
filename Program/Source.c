@@ -309,7 +309,7 @@ void title()
     gotoxy(x, y + 7); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
     gotoxy(x, y + 8); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
     setColor(8);
-    gotoxy(x, y + 15); printf("              창모드로 플레이하시는 걸 권장드립니다!"); Sleep(100);
+    gotoxy(x, y + 16); printf("              창모드로 플레이하시는 걸 권장드립니다!"); Sleep(100);
     
     
 
@@ -819,18 +819,21 @@ void check_level_up()
             speed = 100;
             break;
         case 2:
-            speed = 70;
+            speed = 80;
             break;
         case 3:
-            speed = 50;
+            speed = 60;
             break;
         case 4:
-            speed = 30;
+            speed = 40;
             break;
         case 5:
-            speed = 10;
+            speed = 20;
             break;
         case 6:
+            speed = 10;
+            break;
+        case 7:
             speed = 1;
             break;
         }
