@@ -20,6 +20,8 @@
 #define p       112
 #define P       80 
 #define ESC     27 
+#define m       109
+#define M       77
 
 #define false 0
 #define true 1
@@ -165,6 +167,7 @@ int b_type_next;
 int main_org[MAIN_Y][MAIN_X];  
 int main_cpy[MAIN_Y][MAIN_X]; 
 
+int isMusicPlaying = 1;
 
 
 int bx, by;  
@@ -203,6 +206,19 @@ void pause();
 void playWAV(const char* filename)
 {
     PlaySound(TEXT("tetris.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+}
+
+void toggleMusic()
+{
+    if (isMusicPlaying)
+    {
+        PlaySound(NULL, NULL, 0);
+    }
+    else
+    {
+        PlaySound(TEXT("tetris.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
+    }
+    isMusicPlaying = !isMusicPlaying;
 }
 
 void setColor(int color)
@@ -282,7 +298,7 @@ void title()
     int cnt;    
 
     
-
+    
     gotoxy(x, y + 0); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
     gotoxy(x, y + 1); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
     gotoxy(x, y + 2); printf("◇◇■■■■■◇■■■■◇■■■■■◇■■■◇◇■◇■■■■◇◇"); Sleep(100);
@@ -292,7 +308,8 @@ void title()
     gotoxy(x, y + 6); printf("◇◇◇◇■◇◇◇■■■■◇◇◇■◇◇◇■◇◇■◇■◇■■■■◇◇"); Sleep(100);
     gotoxy(x, y + 7); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
     gotoxy(x, y + 8); printf("◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇◇"); Sleep(100);
-    gotoxy(x, y + 15); printf("       창모드를 조절하여 플레이하시는 걸 권장드립니다!"); Sleep(100);
+    setColor(8);
+    gotoxy(x, y + 15); printf("              창모드로 플레이하시는 걸 권장드립니다!"); Sleep(100);
     
     
 
@@ -302,7 +319,7 @@ void title()
         if (cnt % 200 == 0)
         {
             setColor(6);
-            gotoxy(x + 10 , y + 11); printf("Press Any Key to Start");
+            gotoxy(x + 11 , y + 11); printf("Press Any Key to Start");
         }        
         if ((cnt % 200 - 100) == 0) { gotoxy(x + 10 , y + 11); printf("                                   "); }  
         
@@ -386,6 +403,10 @@ void draw_map()
     
     PlaySound(TEXT("tetris.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
+    
+
+    
+
     gotoxy(STATUS_X_ADJ, STATUS_Y_LEVEL = y); printf(" LEVEL : %5d", level);
     setColor(14);
     gotoxy(STATUS_X_ADJ, STATUS_Y_GOAL = y + 1); printf(" GOAL  : %5d", 7 - cnt);
@@ -408,10 +429,12 @@ void draw_map()
     setColor(5);
     gotoxy(STATUS_X_ADJ, y + 16); printf("←  → : Left / Right");
     gotoxy(STATUS_X_ADJ, y + 17); printf("  ↓   : Soft Drop");
-    gotoxy(STATUS_X_ADJ, y + 18); printf(" SPACE : Hard Drop");
-    gotoxy(STATUS_X_ADJ, y + 20); printf("   R   : Shift");
-    gotoxy(STATUS_X_ADJ, y + 22); printf("   P   : Pause");
-    gotoxy(STATUS_X_ADJ, y + 24); printf("  ESC  : Quit");
+    gotoxy(STATUS_X_ADJ, y + 19); printf(" SPACE : Hard Drop");
+    gotoxy(STATUS_X_ADJ, y + 21); printf("   R   : Shift");
+    gotoxy(STATUS_X_ADJ, y + 23); printf("   P   : Pause");
+    gotoxy(STATUS_X_ADJ, y + 25); printf("  ESC  : Quit");
+    setColor(11);
+    gotoxy(STATUS_X_ADJ + 10, y + 25); printf("  M  :  배경음악 끄기 / 켜기");
 }
 
 void draw_main()
@@ -536,7 +559,8 @@ void check_key()
                 while (crush_on == 0)
                 {  
                     drop_block();
-                    score += level; 
+                    score += level;
+                    setColor(10);
                     gotoxy(STATUS_X_ADJ, STATUS_Y_SCORE); printf("        %6d", score);   
                 }
                 break;
@@ -544,6 +568,10 @@ void check_key()
             case R:  
                 if (check_crush(bx, by, (b_rotation + 1) % 4) == true) move_block(UP);
                 else if (crush_on == 1 && check_crush(bx, by - 1, (b_rotation + 1) % 4) == true) move_block(100);
+                break;
+            case m:
+            case M:
+                toggleMusic();
                 break;
             case P:  
             case p:  
@@ -729,6 +757,7 @@ void check_line()
     if (combo) {   
         if (combo > 1)
         {  
+            setColor(12);
             gotoxy(MAIN_X_ADJ + (MAIN_X / 2) - 1, MAIN_Y_ADJ + by - 2); printf("%d COMBO!", combo);
             Sleep(500);
             score += (combo * level * 100);
@@ -737,6 +766,7 @@ void check_line()
         }
         setColor(14);
         gotoxy(STATUS_X_ADJ, STATUS_Y_GOAL); printf(" GOAL  : %5d", (cnt <= 7) ? 7 - cnt : 0);
+        setColor(14);
         gotoxy(STATUS_X_ADJ, STATUS_Y_SCORE); printf("        %6d", score);
     }
 }
@@ -789,13 +819,19 @@ void check_level_up()
             speed = 100;
             break;
         case 2:
-            speed = 50;
+            speed = 70;
             break;
         case 3:
-            speed = 30;
+            speed = 50;
             break;
         case 4:
+            speed = 30;
+            break;
+        case 5:
             speed = 10;
+            break;
+        case 6:
+            speed = 1;
             break;
         }
         level_up_on = 0; 
