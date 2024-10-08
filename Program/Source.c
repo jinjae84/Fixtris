@@ -14,7 +14,13 @@
 #define RIGHT   77 
 #define UP      72 
 #define DOWN    80 
-#define SPACE   32 
+#define SPACE   32
+#define a       97
+#define A       65
+#define s       115
+#define S       83
+#define d       100
+#define D       68
 #define r       82
 #define R       114
 #define p       112
@@ -406,7 +412,7 @@ void draw_map()
     
 
     
-
+    setColor(14);
     gotoxy(STATUS_X_ADJ, STATUS_Y_LEVEL = y); printf(" LEVEL : %5d", level);
     setColor(14);
     gotoxy(STATUS_X_ADJ, STATUS_Y_GOAL = y + 1); printf(" GOAL  : %5d", 7 - cnt);
@@ -427,8 +433,8 @@ void draw_map()
     gotoxy(STATUS_X_ADJ, y + 13); printf(" BEST SCORE :");
     gotoxy(STATUS_X_ADJ, y + 14); printf("        %6d", best_score);
     setColor(5);
-    gotoxy(STATUS_X_ADJ, y + 16); printf("¡ç  ¡æ : Left / Right");
-    gotoxy(STATUS_X_ADJ, y + 17); printf("  ¡é   : Soft Drop");
+    gotoxy(STATUS_X_ADJ, y + 16); printf("¡ç  ¡æ / A   D : Left / Right");
+    gotoxy(STATUS_X_ADJ, y + 17); printf("  ¡é   /   S  : Soft Drop");
     gotoxy(STATUS_X_ADJ, y + 19); printf(" SPACE : Hard Drop");
     gotoxy(STATUS_X_ADJ, y + 21); printf("   R   : Shift");
     gotoxy(STATUS_X_ADJ, y + 23); printf("   P   : Pause");
@@ -538,13 +544,13 @@ void check_key()
             do { key = getch(); } while (key == 224); 
             switch (key)
             {
-            case LEFT:   
+            case LEFT:
                 if (check_crush(bx - 1, by, b_rotation) == true) move_block(LEFT);
                 break;                            
-            case RIGHT:  
+            case RIGHT:             
                 if (check_crush(bx + 1, by, b_rotation) == true) move_block(RIGHT);
                 break;
-            case DOWN:  
+            case DOWN:            
                 if (check_crush(bx, by + 1, b_rotation) == true) move_block(DOWN);
                 break;
             
@@ -563,6 +569,18 @@ void check_key()
                     setColor(10);
                     gotoxy(STATUS_X_ADJ, STATUS_Y_SCORE); printf("        %6d", score);   
                 }
+                break;
+            case a:
+            case A:
+                if (check_crush(bx - 1, by, b_rotation) == true) move_block(LEFT);
+                break;
+            case d:
+            case D:
+                if (check_crush(bx + 1, by, b_rotation) == true) move_block(RIGHT);
+                break;
+            case s:
+            case S:
+                if (check_crush(bx, by + 1, b_rotation) == true) move_block(DOWN);
                 break;
             case r:
             case R:  
@@ -839,7 +857,9 @@ void check_level_up()
         }
         level_up_on = 0; 
 
+        setColor(14);
         gotoxy(STATUS_X_ADJ, STATUS_Y_LEVEL); printf(" LEVEL : %5d", level);  
+        setColor(14);
         gotoxy(STATUS_X_ADJ, STATUS_Y_GOAL); printf(" GOAL  : %5d", 7 - cnt);  
 
     }
