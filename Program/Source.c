@@ -164,7 +164,7 @@ int blocks[7][4][4][4] = {
   0,1,0,0}}
 };
 
-int blockColors[7] = { 2, 1, 4, 12, 6, 14, 7 };
+int blockColors[7] = { 2, 1, 4, 6, 12, 14, 7 };
 
 int b_type;     
 int b_rotation;  
@@ -818,7 +818,7 @@ void check_level_up()
         reset_main_cpy(); 
          
 
-        for (i = MAIN_Y - 2; i > MAIN_Y - 2 - (level + 1); i--)
+        for (i = MAIN_Y - 2; i > MAIN_Y - 2 - (level - 1); i--)
         {  
             for (j = 1; j < MAIN_X - 1; j++)
             {
